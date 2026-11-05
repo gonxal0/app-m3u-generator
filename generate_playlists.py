@@ -24,12 +24,9 @@ USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 REQUEST_TIMEOUT = 30 
 
 REGION_MAP = {
-    'us': 'United States', 'gb': 'United Kingdom', 'ca': 'Canada',
-    'de': 'Germany', 'at': 'Austria', 'ch': 'Switzerland',
-    'es': 'Spain', 'fr': 'France', 'it': 'Italy', 'br': 'Brazil',
-    'mx': 'Mexico', 'ar': 'Argentina', 'cl': 'Chile', 'co': 'Colombia',
-    'pe': 'Peru', 'se': 'Sweden', 'no': 'Norway', 'dk': 'Denmark',
-    'in': 'India', 'jp': 'Japan', 'kr': 'South Korea', 'au': 'Australia'
+
+    'es': 'Spain'
+
 }
 
 TOP_REGIONS = ['United States', 'Canada', 'United Kingdom']
@@ -427,29 +424,7 @@ def create_epg_xml(epg_data):
                 ET.SubElement(programme, "desc").text = program.get("description", "")
     return ET.ElementTree(root)
 
-def generate_tubi_m3u():
-    proxies = get_proxies("US")
-    json_data = None
-    if proxies:
-        for proxy in proxies:
-            json_data = fetch_channel_list(proxy)
-            if json_data: break
-    if not json_data: json_data = fetch_channel_list(None)
-    if not json_data: return
 
-    channel_list = []
-    content_ids_by_container = json_data.get('epg', {}).get('contentIdsByContainer', {})
-    for container_list in content_ids_by_container.values():
-        for category in container_list:
-            channel_list.extend(category.get('contents', []))
-
-    epg_data = fetch_epg_data(channel_list)
-    if epg_data:
-        group_mapping = create_group_mapping(json_data)
-        m3u_playlist = create_m3u_playlist(epg_data, group_mapping)
-        epg_tree = create_epg_xml(epg_data)
-        write_m3u_file("tubi_all.m3u", m3u_playlist)
-        epg_tree.write(os.path.join(OUTPUT_DIR, "tubi_epg.xml"), encoding='utf-8', xml_declaration=True)
 
 # --- Execution ---
 
@@ -458,6 +433,5 @@ if __name__ == "__main__":
     generate_pluto_m3u()
     generate_plex_m3u()
     generate_samsungtvplus_m3u()
-    generate_tubi_m3u()
-    generate_roku_m3u()
+
 
