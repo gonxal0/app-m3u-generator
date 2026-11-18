@@ -263,6 +263,8 @@ https://jmp2.uk/plu-6380c73f76e43f000721f73b.m3u8
 https://jmp2.uk/plu-61c18e1e0cd4cc00076bc4b3.m3u8
 #EXTINF:-1 channel-id="6a6318a71a30976934632c3d" tvg-id="6a6318a71a30976934632c3d" tvg-chno="22" tvg-name="Paradise Hotel: Ny säsong" tvg-logo="https://images.pluto.tv/channels/6a6318a71a30976934632c3d/colorLogoPNG_1787063239097.png" group-title="Nytt på Pluto TV",Paradise Hotel: Ny säsong
 https://jmp2.uk/plu-6a6318a71a30976934632c3d.m3u8
+#EXTINF:-1 channel-id="61c181899e0bde0007820035" tvg-id="61c181899e0bde0007820035" tvg-chno="900" tvg-name="Paw Patrol" tvg-logo="https://images.pluto.tv/channels/61c181899e0bde0007820035/colorLogoPNG.png" group-title="Barn",Paw Patrol
+https://jmp2.uk/plu-61c181899e0bde0007820035.m3u8
 #EXTINF:-1 channel-id="61c09a3894aa450007814aea" tvg-id="61c09a3894aa450007814aea" tvg-chno="472" tvg-name="Pimp My Ride" tvg-logo="https://images.pluto.tv/channels/61c09a3894aa450007814aea/colorLogoPNG.png" group-title="Det bästa från MTV",Pimp My Ride
 https://jmp2.uk/plu-61c09a3894aa450007814aea.m3u8
 #EXTINF:-1 channel-id="66bb36e03a4ad200082bb8fe" tvg-id="66bb36e03a4ad200082bb8fe" tvg-chno="162" tvg-name="Pixel.tv" tvg-logo="https://images.pluto.tv/channels/66bb36e03a4ad200082bb8fe/colorLogoPNG.png" group-title="Sport",Pixel.tv
